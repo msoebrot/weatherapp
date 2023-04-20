@@ -1,0 +1,27 @@
+html{
+    background: #7A7C7C;
+    background: -moz-linear-gradient(left, #7A7C7C 0%, #D5D5D5 100%);
+    background: -webkit-linear-gradient(left, #7A7C7C 0%, #D5D5D5 100%);
+    background: linear-gradient(to right, #7A7C7C 0%, #D5D5D5 100%);
+}
+
+img {
+    border-radius: 30px;
+}
+
+img:hover{
+    border:1px solid rgba(5, 8, 25, 0.74);
+}
+
+
+a:link {
+    color:rgb(0, 92, 128);
+}
+
+a:visited {
+    color:rgb(0, 234, 255);
+}
+
+a:hover {
+    font-weight: bold;
+}
