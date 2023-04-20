@@ -1,24 +1,24 @@
 <!doctype html>
 <html>
     <head>
-        <title>Our Funky HTML page</title>
-        <meta name="description" content="Our first page">
+        <title>Weather App</title>
+        <meta name="description" content="My Weather App">
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <h1> Welcome to my HTML page! </h1>
-        <p>My name is Michael. I am a third year Computer Science Major at the 
-            University of California, Santa Cruz. I enjoy watching 
-            K-Dramas on Netflix and am deeply interested in anything 
-            having to do with the NBA/Basketball. </p>
-        <a href="https://github.com/msoebrot"><img src="github.png" alt="GitHub Link" width="50px" height="50px"></a>
-        <a href="www.linkedin.com/in/michael-soebroto/ "><img src="lnkin.png" alt="Linkedin Link" width="50px" height="50px"></a>
-        <h2> Projects </h2>
-        <dl>  
-            <dt> <a href="https://github.com/msoebrot"> Weather App</a></dt> 
-                <dd> Tells you the weather! Made using HTML, CSS and JavaScript </dd>
-            <dt> <a href="https://msoebrot.github.io/website/businesscard/"> Business Card</a> </dt>
-                <dd> A practice website used to format a business card. </dd>
-        </dl>
+        <main>
+            <h1 id="date">4/19/2023</h1>
+            <h2 id="temperature">Click the Button to see Temperature!</h1>
+            <h3 id="weatherstatus">Click the Button to see Weather Status!</h1>
+            <img src="cloud.png" alt="Cloud Icon" height="100" weight="100" class="weather-icon">
+            <button id="getWeatherBtn">Get Weather</button>
+            <div class="fiveday">  
+                <div class="forecast">X</div>
+                <div class="forecast">X</div>
+                <div class="forecast">X</div>
+                <div class="forecast">X</div>
+                <div class="forecast">X</div>
+            </div>
+        </main>
     </body>
 </html>
