@@ -2,9 +2,6 @@
 // Create the variable for longitude
 let latitude, longitude;
 
-// Set const btn to #getWeatherBtn ID
-const btn = document.getElementById('getWeatherBtn');
-
 window.onload = function() {
     //gets today's date using the builtin Date object.
     const date = new Date();
@@ -26,6 +23,16 @@ window.onload = function() {
 	}
 }
 
+function success(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    console.log(latitude, longitude);
+    // Print out the latittude and longitude to see if it works!
+}
+
+// Set const btn to #getWeatherBtn ID
+const btn = document.getElementById('getWeatherBtn');
+
 btn.addEventListener('click', function() {
     let forecast = [["M", 52],["Tu", 53],["W", 54],["Th", 55],["F", 56]];
     let forecastElements = document.getElementsByClassName("forecast");
@@ -33,10 +40,3 @@ btn.addEventListener('click', function() {
         forecastElements[i].innerHTML = forecast[i][0] + ": " + forecast[i][1] + "\u2109";
     }
 });
-
-function success(position) {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-    console.log(latitude, longitude);
-    // Print out the latittude and longitude to see if it works!
-}
