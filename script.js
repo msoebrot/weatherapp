@@ -45,30 +45,34 @@ btn.addEventListener('click', function() {
 
     xhr.onload = function(){ //After reponse
         const body = JSON.parse(xhr.responseText); //Set body to responseText and transforms it from a string to an actual JSON object
-        let temperature = body.main.temp; //parse the temperature from the response
-        let weatherStatus = body.weather.description; // Parse the weather status from the response
+        let temperature = body.temperature; //parse the temperature from the response
+        let weatherStatus = body.weatherStatus; // Parse the weather status from the response
+        console.log(temperature, weatherStatus)
         document.getElementById("temperature").innerHTML = `Temperature: ${temperature}\u00B0F`; //set temperature on document
-        document.getElementById("weatherStatus").innerHTML = `Weather Status: ${weatherStatus}`; //set weatherStatus on document
+        document.getElementById("weatherstatus").innerHTML = `Weather Status: ${weatherStatus}`; //set weatherStatus on document
     }
 
     //5 Day Forecast data
     const xhr2 = new XMLHttpRequest();
-    xhr2.open("GET", `http://localhost:3000/forecast/${latitude}/${longitude}`); //ioebs a fer request to the website
+    xhr2.open("GET", `http://localhost:3000/5day/${latitude}/${longitude}`); //ioebs a fer request to the website
     xhr2.send(); //sends the request
 
     xhr2.onload = function(){ //After reponse
         const body  = JSON.parse(xhr2.responseText); //Set body to responseText and transforms it from a string to an actual JSON object
-        let forecast = body.list; //parse the forecast list from the response
+        let forecast = body; //parse the forecast list from the response
+        console.log(xhr2.responseText)
+        console.log(body[0])
         let forecastElements = document.getElementsByClassName("forecast");
         for(let i = 0; i < forecast.length; i++) {
-            forecastElements[i].innerHTML = `${forecast[i].dayName}: ${forecast[i].main.temp}\u00B0F`
+            forecastElements[i].innerHTML = `${forecast[i].dayName}: ${forecast[i].temp}\u00B0F`
         }
 
     }
-
+/*
     let forecast = [["M", 52],["Tu", 53],["W", 54],["Th", 55],["F", 56]];
     let forecastElements = document.getElementsByClassName("forecast");
     for (let i = 0; i < forecast.length; i++) {
         forecastElements[i].innerHTML = forecast[i][0] + ": " + forecast[i][1] + "\u00B0F";
     }
+*/
 });
